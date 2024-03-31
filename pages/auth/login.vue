@@ -1,6 +1,6 @@
 <script setup lang="ts">
 function handleLogin() {
-  console.log('Login');
+  // console.log('Login');
 }
 </script>
 

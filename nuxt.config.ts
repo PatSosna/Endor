@@ -11,6 +11,8 @@ export default defineNuxtConfig({
   nitro: {
     experimental: {
       database: true,
+      tasks: true,
+      websocket: true
     },
 
     database: {
@@ -20,7 +22,20 @@ export default defineNuxtConfig({
           url: process.env.TURSO_DB_URL,
           authToken: process.env.TURSO_DB_AUTH_TOKEN,
         }
-      }
+      },
     }
   },
-});
+
+  $development: {
+    nitro: {
+      database: {
+        default: {
+          connector: 'sqlite',
+          options: {
+            name: 'dev.db'
+          }
+        }
+      }
+    }
+  }
+}); 
